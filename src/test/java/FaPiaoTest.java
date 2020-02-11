@@ -1,3 +1,4 @@
+import entity.User;
 import org.junit.Test;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
@@ -7,6 +8,8 @@ import org.xhtmlrenderer.pdf.ITextRenderer;
 
 import java.io.*;
 import java.nio.file.FileSystems;
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.itextpdf.text.pdf.BaseFont.IDENTITY_H;
 import static com.itextpdf.text.pdf.BaseFont.NOT_EMBEDDED;
@@ -49,16 +52,16 @@ public class FaPiaoTest {
         //
         // Note that we could also read this data from a JSON file, a database
         // a web service or whatever.
-        Data data = exampleDataForJohnDoe();
+        List<User> userList = exampleDataForJohnDoe();
 
         Context context = new Context();
-        context.setVariable("data", data);
+        context.setVariable("title", "发票");
 
         // Flying Saucer needs XHTML - not just normal HTML. To make our life
         // easy, we use JTidy to convert the rendered Thymeleaf template to
         // XHTML. Note that this might not work for very complicated HTML. But
         // it's good enough for a simple letter.
-        String renderedHtmlContent = templateEngine.process("template", context);
+        String renderedHtmlContent = templateEngine.process("fapiao", context);
         String xHtml = convertToXhtml(renderedHtmlContent);
 
         ITextRenderer renderer = new ITextRenderer();
@@ -85,14 +88,18 @@ public class FaPiaoTest {
         outputStream.close();
     }
 
-    private Data exampleDataForJohnDoe() {
-        Data data = new Data();
-        data.setFirstname("Alan");
-        data.setLastname("Chen");
-        data.setStreet("Example Street 1");
-        data.setZipCode("12345");
-        data.setCity("珠海");
-        return data;
+    private List<User> exampleDataForJohnDoe() {
+        List<User> userList = new ArrayList<User>();
+
+        User tom = new User("Tom", 19, 1);
+        User amy = new User("Amy", 28, 0);
+        User leo = new User("Leo", 23, 1);
+
+        userList.add(tom);
+        userList.add(amy);
+        userList.add(leo);
+
+        return userList;
     }
 
     static class Data {
