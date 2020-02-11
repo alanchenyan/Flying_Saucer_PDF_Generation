@@ -85,11 +85,11 @@ public class FlyingSaucerTest {
 
     private Data exampleDataForJohnDoe() {
         Data data = new Data();
-        data.setFirstname("John");
-        data.setLastname("Doe");
+        data.setFirstname("Alan");
+        data.setLastname("Chen");
         data.setStreet("Example Street 1");
         data.setZipCode("12345");
-        data.setCity("Example City");
+        data.setCity("珠海 City");
         return data;
     }
 
