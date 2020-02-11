@@ -1,3 +1,4 @@
+import com.itextpdf.text.pdf.BaseFont;
 import org.junit.Test;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
@@ -8,8 +9,7 @@ import org.xhtmlrenderer.pdf.ITextRenderer;
 import java.io.*;
 import java.nio.file.FileSystems;
 
-import static com.itextpdf.text.pdf.BaseFont.EMBEDDED;
-import static com.itextpdf.text.pdf.BaseFont.IDENTITY_H;
+import static com.itextpdf.text.pdf.BaseFont.*;
 import static org.thymeleaf.templatemode.TemplateMode.HTML;
 
 /**
@@ -62,7 +62,9 @@ public class FlyingSaucerTest {
         String xHtml = convertToXhtml(renderedHtmlContent);
 
         ITextRenderer renderer = new ITextRenderer();
-        renderer.getFontResolver().addFont("Code39.ttf", IDENTITY_H, EMBEDDED);
+
+        // 宋体（支持中文）
+        renderer.getFontResolver().addFont("SIMSUN.TTC", IDENTITY_H, NOT_EMBEDDED);
 
         // FlyingSaucer has a working directory. If you run this test, the working directory
         // will be the root folder of your project. However, all files (HTML, CSS, etc.) are
@@ -89,7 +91,7 @@ public class FlyingSaucerTest {
         data.setLastname("Chen");
         data.setStreet("Example Street 1");
         data.setZipCode("12345");
-        data.setCity("珠海 City");
+        data.setCity("珠海");
         return data;
     }
 
