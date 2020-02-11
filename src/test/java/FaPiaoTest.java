@@ -9,7 +9,9 @@ import org.xhtmlrenderer.pdf.ITextRenderer;
 import java.io.*;
 import java.nio.file.FileSystems;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static com.itextpdf.text.pdf.BaseFont.IDENTITY_H;
 import static com.itextpdf.text.pdf.BaseFont.NOT_EMBEDDED;
@@ -55,7 +57,14 @@ public class FaPiaoTest {
         List<User> userList = exampleDataForJohnDoe();
 
         Context context = new Context();
-        context.setVariable("title", "发票");
+
+        Map<String, Object> variables = new HashMap<>();
+        variables.put("title","发票");
+        variables.put("userList",userList);
+
+        context.setVariables(variables);
+
+        //context.setVariable("title", "发票");
 
         // Flying Saucer needs XHTML - not just normal HTML. To make our life
         // easy, we use JTidy to convert the rendered Thymeleaf template to
