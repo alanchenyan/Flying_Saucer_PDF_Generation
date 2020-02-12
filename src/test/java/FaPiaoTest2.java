@@ -63,6 +63,8 @@ public class FaPiaoTest2 {
         columns.add("年龄");
         columns.add("性别");
 
+
+        context.setVariable("logo_url", "images/aloner.png");
         context.setVariable("title", "发票");
         context.setVariable("columns",columns);
         context.setVariable("datas", datas);

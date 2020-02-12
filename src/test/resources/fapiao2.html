@@ -8,7 +8,7 @@
         <div>
             <div align="center">
                 <h1>[[${title}]]</h1>
-                <img alt="加载中..." src="images/aloner.png" />
+                <img th:src="${logo_url}" />
             </div>
             <table>
                 <td th:each="column : ${columns}"><b>[[${column}]]</b></td>
