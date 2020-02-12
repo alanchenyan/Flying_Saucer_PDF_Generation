@@ -58,19 +58,26 @@ public class FaPiaoTest2 {
 
         Context context = new Context();
 
-        Map<String, Object> variables = new HashMap<>();
-        variables.put("title","发票");
-        variables.put("userList",userList);
+        List<String> columns = new ArrayList<>();
+        columns.add("姓名");
+        columns.add("age");
+        columns.add("性别");
 
-        context.setVariables(variables);
+//        Map<String, Object> variables = new HashMap<>();
+//        variables.put("title","发票");
+//        variables.put("userList",userList);
+//
+//        context.setVariables(variables);
 
-        //context.setVariable("title", "发票");
+        context.setVariable("title", "发票");
+        context.setVariable("columns",columns);
+        context.setVariable("userList", userList);
 
         // Flying Saucer needs XHTML - not just normal HTML. To make our life
         // easy, we use JTidy to convert the rendered Thymeleaf template to
         // XHTML. Note that this might not work for very complicated HTML. But
         // it's good enough for a simple letter.
-        String renderedHtmlContent = templateEngine.process("fapiao", context);
+        String renderedHtmlContent = templateEngine.process("fapiao2", context);
         String xHtml = convertToXhtml(renderedHtmlContent);
 
         ITextRenderer renderer = new ITextRenderer();
@@ -100,7 +107,7 @@ public class FaPiaoTest2 {
     private List<User> exampleDataForJohnDoe() {
         List<User> userList = new ArrayList<User>();
 
-        User tom = new User("Tom", 19, 1);
+        User tom = new User("Tom2", 19, 1);
         User amy = new User("Amy", 28, 0);
         User leo = new User("Leo", 23, 1);
 

@@ -11,11 +11,7 @@
                 <img alt="加载中..." src="images/aloner.png" />
             </div>
             <table>
-                <tr>
-                    <td><b>Name</b></td>
-                    <td><b>Age</b></td>
-                    <td><b>Sex</b></td>
-                </tr>
+                <td th:each="column : ${columns}"><b>[[${column}]]</b></td>
                 <tr th:each="user : ${userList}">
                     <td>[[${user.name}]]</td>
                     <td>[[${user.age}]]</td>
