@@ -5,23 +5,92 @@
     </head>
 
     <body>
-        <div>
-            <div align="center">
-                <h1>[[${title}]]</h1>
-                <img alt="加载中..." src="images/aloner.png" />
+    <div class="container">
+        <div class="header">
+            <div class="header-logo">
+                <img src="receipt/image/logo_name.png" alt="title">
+                <div class="logo-title">收据</div>
             </div>
-            <table>
-                <tr>
-                    <td><b>Name</b></td>
-                    <td><b>Age</b></td>
-                    <td><b>Sex</b></td>
-                </tr>
-                <tr th:each="user : ${userList}">
-                    <td>[[${user.name}]]</td>
-                    <td>[[${user.age}]]</td>
-                    <td>男</td>
-                </tr>
-            </table>
+            <div class="header-content">
+                <div class="content-detail">
+                    <div>
+                        <div class="detail-item">收件人: DEIL</div>
+                        <div>聯系電話: 0765-7876764</div>
+                    </div>
+                    <div>
+                        <div class="detail-item">發送者: 瀛海旅遊</div>
+                        <div>聯系電郵: USE@TRAVEL.COM</div>
+                    </div>
+                    <div>
+                        <div class="detail-item">聯系人: 財務部</div>
+                        <div>賬單日期: 2020.02.10</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="table-title">车务</div>
+                    <table cellspacing="0" class="table-content" width="100%" cellpadding="8px">
+                        <tr class="table-item">
+                            <td>跟进人</td>
+                            <td>订单日期</td>
+                            <td>订单编号</td>
+                            <td>行程内容</td>
+                            <td>车辆类型</td>
+                            <td>日期</td>
+                            <td>时间</td>
+                            <td>客人姓名</td>
+                            <td>应收金额</td>
+                        </tr>
+                        <tr>
+                            <td>Hz</td>
+                            <td>2020-02-10</td>
+                            <td>T-A19287887489</td>
+                            <td>澳门大学-香港九龙城伯爵街伯爵园</td>
+                            <td>七人商务车</td>
+                            <td>2020-02-10</td>
+                            <td>12:00</td>
+                            <td>DEIL</td>
+                            <td>HK$2,400</td>
+                        </tr>
+                        <tr>
+                            <td>Hz</td>
+                            <td>2020-02-10</td>
+                            <td>T-A19287887489</td>
+                            <td>澳门大学-香港九龙城伯爵街伯爵园</td>
+                            <td>七人商务车</td>
+                            <td>2020-02-10</td>
+                            <td>12:00</td>
+                            <td>DEIL</td>
+                            <td>HK$2,400</td>
+                        </tr>
+                    </table>
+                    <div class="table-footer">
+                        总金额(Total) : HK$2,400
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="center">
+            <div>
+                <div class="center-item">支票擡頭請寫：</div>
+                <div class="center-item">銀行戶口:瀛海陸路跨境客運股份有限公司</div>
+                <div class="center-item">
+                    <div class="left-title">賬戶號碼</div>
+                    <div class="left-content">
+                        <div>(港幣):00185000125787083</div>
+                        <div>(葡幣):00185000125787061</div>
+                    </div>
+                </div>
+                <div class="center-item">所屬銀行:中國銀行(澳門分行)</div>
+            </div>
+            <div>
+                <img src="receipt/image/logo.png" alt="logo">
+            </div>
+        </div>
+        <div class="footer">
+            <div>澳門宋玉生廣場336號誠豐商業中心 9 樓 P 室</div>
+            <div>Alameda Dr.Carlos d' Assumpcao, No.336-324, Centro Comercial Cheng Feng, 9 andar P, Macau</div>
+            <div>TEL: (853)2875 1558 FAX: (853)2875 0558</div>
+        </div>
+    </div>
     </body>
 </html>

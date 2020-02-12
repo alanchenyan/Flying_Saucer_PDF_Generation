@@ -39,7 +39,7 @@ public class Receipt {
         // of the main HTML file, we also have partials like a footer or
         // a header. We can re-use those partials in different documents.
         ClassLoaderTemplateResolver templateResolver = new ClassLoaderTemplateResolver();
-        templateResolver.setPrefix("/receipt/");
+        templateResolver.setPrefix("/");
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode(HTML);
         templateResolver.setCharacterEncoding(UTF_8);
@@ -70,7 +70,7 @@ public class Receipt {
         // easy, we use JTidy to convert the rendered Thymeleaf template to
         // XHTML. Note that this might not work for very complicated HTML. But
         // it's good enough for a simple letter.
-        String renderedHtmlContent = templateEngine.process("index", context);
+        String renderedHtmlContent = templateEngine.process("receipt", context);
         String xHtml = convertToXhtml(renderedHtmlContent);
 
         ITextRenderer renderer = new ITextRenderer();
