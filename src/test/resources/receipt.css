@@ -1,6 +1,5 @@
 body {
     font-family: SimSun;
-    font-size: 10px;
 }
 
 .container {
@@ -8,8 +7,9 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width: 1200px;
+    max-width: 1100px;
     min-height: 100vh;
+    font-size: 10px;
 }
 
 .header {}
@@ -20,7 +20,15 @@ body {
     border-bottom: 1px solid #ddccb4;
 }
 
+.logo-img {
+    width: 233px;
+    height: 49px;
+}
+
 .logo-title {
+    padding-top: 25px;
+    padding-bottom: 10px;
+    font-size: 16px;
     font-weight: bold;
     letter-spacing: 20px;
 }
@@ -31,6 +39,7 @@ body {
 }
 
 .table-content {
+    width: 100%;
     border: 1px solid #e8e8e8;
     padding-bottom: 25px;
 }
@@ -46,14 +55,12 @@ body {
 }
 
 .table-footer {
-    padding: 5px 20px;
+    padding: 10px 16px;
     text-align: right;
     border: 1px solid #e8e8e8;
 }
 
 .content-detail {
-    display: flex;
-    justify-content: space-between;
     padding: 15px 0;
 }
 
@@ -61,11 +68,25 @@ body {
     padding-bottom: 10px;
 }
 
+.table-last-item {
+    width: 180px;
+}
+
 .center {
-    /* flex: 1; */
-    display: flex;
-    justify-content: space-between;
-    padding: 40px 30px 40px 15px;
+    padding: 200px 30px 220px 15px;
+}
+
+.center-table {
+    width: 100%;
+}
+
+.table-logo {
+    text-align: right;
+}
+
+.logo {
+    width: 85px;
+    height: 85px;
 }
 
 .center-item {
