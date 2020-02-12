@@ -60,14 +60,8 @@ public class FaPiaoTest2 {
 
         List<String> columns = new ArrayList<>();
         columns.add("姓名");
-        columns.add("age");
+        columns.add("年龄");
         columns.add("性别");
-
-//        Map<String, Object> variables = new HashMap<>();
-//        variables.put("title","发票");
-//        variables.put("userList",userList);
-//
-//        context.setVariables(variables);
 
         context.setVariable("title", "发票");
         context.setVariable("columns",columns);
