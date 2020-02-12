@@ -12,10 +12,8 @@
             </div>
             <table>
                 <td th:each="column : ${columns}"><b>[[${column}]]</b></td>
-                <tr th:each="user : ${userList}">
-                    <td>[[${user.name}]]</td>
-                    <td>[[${user.age}]]</td>
-                    <td>男</td>
+                <tr th:each="list : ${datas}">
+                    <td th:each="item : ${list}">[[${item}]]</td>
                 </tr>
             </table>
         </div>

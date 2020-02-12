@@ -54,7 +54,7 @@ public class FaPiaoTest2 {
         //
         // Note that we could also read this data from a JSON file, a database
         // a web service or whatever.
-        List<User> userList = exampleDataForJohnDoe();
+        List<List<String>> datas = exampleDataForJohnDoe();
 
         Context context = new Context();
 
@@ -65,7 +65,7 @@ public class FaPiaoTest2 {
 
         context.setVariable("title", "发票");
         context.setVariable("columns",columns);
-        context.setVariable("userList", userList);
+        context.setVariable("datas", datas);
 
         // Flying Saucer needs XHTML - not just normal HTML. To make our life
         // easy, we use JTidy to convert the rendered Thymeleaf template to
@@ -98,66 +98,31 @@ public class FaPiaoTest2 {
         outputStream.close();
     }
 
-    private List<User> exampleDataForJohnDoe() {
-        List<User> userList = new ArrayList<User>();
+    private List<List<String>> exampleDataForJohnDoe() {
+        List<List<String>> datas = new ArrayList<>();
 
-        User tom = new User("Tom2", 19, 1);
-        User amy = new User("Amy", 28, 0);
-        User leo = new User("Leo", 23, 1);
+        List<String> bean = new ArrayList<>();
+        bean.add("Tom");
+        bean.add("19");
+        bean.add("1");
 
-        userList.add(tom);
-        userList.add(amy);
-        userList.add(leo);
+        datas.add(bean);
 
-        return userList;
-    }
+        List<String> bean2 = new ArrayList<>();
+        bean2.add("Amy");
+        bean2.add("28");
+        bean2.add("0");
+        datas.add(bean2);
 
-    static class Data {
-        private String firstname;
-        private String lastname;
-        private String street;
-        private String zipCode;
-        private String city;
+//        User tom = new User("Tom2", 19, 1);
+//        User amy = new User("Amy", 28, 0);
+//        User leo = new User("Leo", 23, 1);
 
-        public String getFirstname() {
-            return firstname;
-        }
+//        userList.add(tom);
+//        userList.add(amy);
+//        userList.add(leo);
 
-        public void setFirstname(String firstname) {
-            this.firstname = firstname;
-        }
-
-        public String getLastname() {
-            return lastname;
-        }
-
-        public void setLastname(String lastname) {
-            this.lastname = lastname;
-        }
-
-        public String getStreet() {
-            return street;
-        }
-
-        public void setStreet(String street) {
-            this.street = street;
-        }
-
-        public String getZipCode() {
-            return zipCode;
-        }
-
-        public void setZipCode(String zipCode) {
-            this.zipCode = zipCode;
-        }
-
-        public String getCity() {
-            return city;
-        }
-
-        public void setCity(String city) {
-            this.city = city;
-        }
+        return datas;
     }
 
     private String convertToXhtml(String html) throws UnsupportedEncodingException {
