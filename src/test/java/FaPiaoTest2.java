@@ -26,7 +26,7 @@ import static org.thymeleaf.templatemode.TemplateMode.HTML;
  * <p>
  * /test.pdf
  */
-public class FaPiaoTest {
+public class FaPiaoTest2 {
 
     private static final String OUTPUT_FILE = "fapiao.pdf";
     private static final String UTF_8 = "UTF-8";

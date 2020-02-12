@@ -1,0 +1,86 @@
+body {
+    font-family: SimSun;
+    font-size: 12px;
+}
+
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 1200px;
+    min-height: 100vh;
+}
+
+.header {}
+
+.header-logo {
+    padding: 15px 0;
+    text-align: center;
+    border-bottom: 1px solid #ddccb4;
+}
+
+.logo-title {
+    font-weight: bold;
+    letter-spacing: 20px;
+}
+
+.header-content {
+    padding-left: 15px;
+    padding-right: 10px;
+}
+
+.table-content {
+    border: 1px solid #e8e8e8;
+    padding-bottom: 25px;
+}
+
+.table-title {
+    padding-top: 40px;
+    padding-bottom: 16px;
+    border-top: 1px solid #e8e8e8;
+}
+
+.table-item {
+    background-color: #f2f2f2;
+}
+
+.table-footer {
+    padding: 5px 20px;
+    text-align: right;
+    border: 1px solid #e8e8e8;
+}
+
+.content-detail {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+}
+
+.detail-item {
+    padding-bottom: 10px;
+}
+
+.center {
+    /* flex: 1; */
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 30px 40px 15px;
+}
+
+.center-item {
+    padding: 5px 0;
+}
+
+.left-title {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.left-content {
+    display: inline-block;
+}
+
+.footer {
+    text-align: center;
+}
